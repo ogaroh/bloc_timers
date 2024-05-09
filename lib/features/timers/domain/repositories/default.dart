@@ -1,6 +1,6 @@
 import '../../data/models/timer.dart';
 
-class MyRepository {
+class DefaultRepository {
   static List<Timer> timers = [];
 
   static void addTimer(Timer timer) {

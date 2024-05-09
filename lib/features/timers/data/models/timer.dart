@@ -19,6 +19,10 @@ class Timer {
     required this.isRunning,
   });
 
+  @override
+  String toString() =>
+      "$projectId $taskId $description $isFavorite $startTime $stopTime $isRunning";
+
   Timer copyWith({
     String? id,
     String? projectId,

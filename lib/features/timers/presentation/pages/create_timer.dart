@@ -86,7 +86,7 @@ class _CreateTimerScreenState extends State<CreateTimerScreen> {
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                String id = (MyRepository.timers.length + 1).toString();
+                String id = (DefaultRepository.timers.length + 1).toString();
                 Timer timer = Timer(
                   id: id,
                   projectId: _selectedProject,

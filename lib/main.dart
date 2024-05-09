@@ -1,3 +1,4 @@
+import 'package:apexive_assignment/injection_container.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -12,14 +13,6 @@ void main() async {
         ? HydratedStorage.webStorageDirectory
         : await getApplicationDocumentsDirectory(),
   );
+  await initializeDependencies();
   runApp(const MyApp());
 }
-
-
-
-
-
-
-
-
-

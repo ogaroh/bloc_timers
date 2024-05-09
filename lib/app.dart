@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,19 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Timer App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MultiBlocProvider(
-        providers: [
-          BlocProvider<TimerBloc>(
-            create: (BuildContext context) =>
-                TimerBloc(MyRepository.getTimers()),
-          ),
-        ],
-        child: const TimerListScreen(),
+    return BlocProvider(
+      create: (context) => TimerBloc(DefaultRepository.getTimers()),
+      child: MaterialApp(
+        title: 'Timer App',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const TimerListScreen(),
       ),
     );
   }
